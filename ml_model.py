@@ -9,8 +9,8 @@ from tensorflow import keras
 # setup model
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28,28)),
-    keras.layers.Dense(200, activation=tf.nn.relu),
-    keras.layers.Dense(200, activation=tf.nn.relu),
+    keras.layers.Dense(128, activation=tf.nn.relu),
+    keras.layers.Dense(128, activation=tf.nn.relu),
     keras.layers.Dense(10, activation=tf.nn.softmax),
 ])
 
@@ -25,3 +25,4 @@ model.fit(train_images, train_labels, epochs=5)
 
 # save model
 model.save('saved_model/my_model')
+model.save_weights('saved_model/weights.h5')
